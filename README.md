@@ -10,6 +10,7 @@ The algorithm is presented in the paper *ARXIV id coming soon*.
 
 The software requires the [OpenMP API](http://openmp.org/wp/). After cloning this repository,
 build the software by issuing the `make` command inside the project folder: 
+
     $ make
     g++ -fopenmp -std=c++11 -Ofast -Wall -pedantic -g -Iinclude main.cpp src/* -lm -o kadabra
 
