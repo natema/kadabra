@@ -12,6 +12,7 @@ Betweenness via Random Approximation*](http://arxiv.org/abs/1604.08553).
 
 The software requires the [OpenMP API](http://openmp.org/wp/). After cloning this repository,
 build the software by issuing the `make` command inside the project folder: 
+
     $ make
     g++ -fopenmp -std=c++11 -Ofast -Wall -pedantic -g -Iinclude main.cpp src/* -lm -o kadabra
 
