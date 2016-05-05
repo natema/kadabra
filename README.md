@@ -4,7 +4,9 @@
 
 This repository contains the source code of KADABRA, an adaptive probabilistic algorithm for 
 approximating the betweenness centrality of nodes in a network. 
-The algorithm is presented in the paper *ARXIV id coming soon*.
+The algorithm is presented in the paper [*KADABRA is an ADaptive Algorithm for
+Betweenness via Random Approximation*](http://arxiv.org/abs/1604.08553).
+
 
 ## Installation 
 
