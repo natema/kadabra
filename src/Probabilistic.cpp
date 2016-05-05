@@ -107,7 +107,7 @@ double Probabilistic::compute_f( const double btilde, const uint64_t iter_num, c
 double Probabilistic::compute_g( const double btilde, const uint64_t iter_num, const double delta_u ) const {
     double tmp = log(1./delta_u)/3.;
     double err_hoeff = 1./iter_num * (tmp + sqrt(tmp * tmp + omega / 2 * log(1./delta_u)));
-    tmp = (((double) omega) / iter_num - 1./3);
+    tmp = (((double) omega) / iter_num + 1./3);
     double err_chern = (log(1./delta_u)) * 1./iter_num * (tmp + sqrt(tmp * tmp + 2 * btilde * omega / (log(1./delta_u))));
     return min(err_hoeff, min(err_chern, 1-btilde));
 }
