@@ -97,7 +97,7 @@ bool Probabilistic::compute_finished(Status *status) const {
 double Probabilistic::compute_f( const double btilde, const uint64_t iter_num, const double delta_l ) const {
     double tmp = log(1./delta_l)/3.;
     double err_hoeff = 1./iter_num * (tmp + sqrt(tmp * tmp + omega / 2 * log(1./delta_l)));
-    tmp = (((double) omega) / iter_num + 1./3);
+    tmp = (((double) omega) / iter_num - 1./3);
     double err_chern = (log(1./delta_l)) * 1./iter_num * (-tmp + sqrt(tmp * tmp + 2 * btilde * omega / (log(1./delta_l))));
     return min(err_hoeff, min(err_chern, btilde));
 }
