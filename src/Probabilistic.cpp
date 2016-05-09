@@ -95,21 +95,17 @@ bool Probabilistic::compute_finished(Status *status) const {
 // Computes the function f that bounds the betweenness of a vertex from below.
 // For more information, see Borassi, Natale (2016).
 double Probabilistic::compute_f( const double btilde, const uint64_t iter_num, const double delta_l ) const {
-    double tmp = log(1./delta_l)/3.;
-    double err_hoeff = 1./iter_num * (tmp + sqrt(tmp * tmp + omega / 2 * log(1./delta_l)));
-    tmp = (((double) omega) / iter_num - 1./3);
+    double tmp = (((double) omega) / iter_num - 1./3);
     double err_chern = (log(1./delta_l)) * 1./iter_num * (-tmp + sqrt(tmp * tmp + 2 * btilde * omega / (log(1./delta_l))));
-    return min(err_hoeff, min(err_chern, btilde));
+    return min(err_chern, btilde);
 }
 
 // Computes the function g that bounds the betweenness of a vertex from above.
 // For more information, see Borassi, Natale (2016).
 double Probabilistic::compute_g( const double btilde, const uint64_t iter_num, const double delta_u ) const {
-    double tmp = log(1./delta_u)/3.;
-    double err_hoeff = 1./iter_num * (tmp + sqrt(tmp * tmp + omega / 2 * log(1./delta_u)));
-    tmp = (((double) omega) / iter_num + 1./3);
+    double tmp = (((double) omega) / iter_num + 1./3);
     double err_chern = (log(1./delta_u)) * 1./iter_num * (tmp + sqrt(tmp * tmp + 2 * btilde * omega / (log(1./delta_u))));
-    return min(err_hoeff, min(err_chern, 1-btilde));
+    return min(err_chern, 1-btilde);
 }
 
 // Outputs the current status.
